@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* P0-08 FIX: Aturan cetak deterministik untuk .printing-workspace dan dukungan A4 Landscape */
+@media print {
+  body.printing-workspace .no-print {
+    display: none !important;
+  }
+
+  body.printing-workspace {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.printing-workspace .workspace-print-sheet {
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    page-break-after: always;
+  }
+}
+
+@page {
+  margin: 10mm;
+}
